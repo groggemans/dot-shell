@@ -2,7 +2,7 @@
 My common shell configuration
 
 This is a collection of common shell files I use. These files are shared
-between my [zsh][dot-zsh] en [bash][dot-bash] configs.
+between my [zsh][dot-zsh] en [bash][dot-bash] configs. Do mind, these are **NOT POSIX**!!
 
 Feel free to use it as a starting point for your own shell configuration!
 
