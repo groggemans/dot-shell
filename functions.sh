@@ -6,7 +6,10 @@
 # @license MIT
 ##############################################################################
 
-# @TODO: implement some useful functions
+# Generate password
+gen_pass() {
+    strings /dev/urandom | tr -d $'\n\t' | head -c${1:-24};echo
+}
 
 ##############################################################################
 
