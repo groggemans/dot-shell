@@ -17,6 +17,9 @@ pkg.install() {
 
 # Link package
 pkg.link() {
+    # Link profile file
+    fs.link_file profile
+
     # Link into ~/.config/shell
     mkdir -p "$ELLIPSIS_HOME/.config"
     fs.link_rfile "$PKG_PATH" "$ELLIPSIS_HOME/.config/shell"
