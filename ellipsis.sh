@@ -18,15 +18,26 @@ pkg.install() {
 # Link package
 pkg.link() {
     # Link into ~/.config/shell
-    fs.link_rfile "$PKG_PATH" "$HOME/.config/shell"
+    mkdir -p "$ELLIPSIS_HOME/.config"
+    fs.link_rfile "$PKG_PATH" "$ELLIPSIS_HOME/.config/shell"
 }
 
 ##############################################################################
 
 # Unlink package
 pkg.unlink() {
-    # Remove from ~/.config
-    rm -f "$HOME/.config/shell"
+    # Remove link in ~/.config
+    rm -f "$ELLIPSIS_HOME/.config/shell"
+
+    # Remove links in the home folder
+    hooks.unlink
+}
+
+##############################################################################
+
+# Uninstall package
+pkg.uninstall() {
+    : #TODO
 }
 
 ##############################################################################
