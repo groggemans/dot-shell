@@ -23,6 +23,12 @@ export LANGUAGE="en_US.UTF-8"
 
 append_path "$HOME/bin"                 # Users bin folder
 append_path "$HOME/.bin"                # Users bin folder
-append_path "$HOME/.ellipsis/bin"       # Ellipsis bin folder
+
+##############################################################################
+# Ellipsis
+
+if [ -f "$HOME/.ellipsis/init.sh" ]; then
+    source "$HOME/.ellipsis/init.sh"
+fi
 
 ##############################################################################
