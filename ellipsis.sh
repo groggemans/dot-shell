@@ -9,8 +9,7 @@
 
 # Install package
 pkg.install() {
-    # Make sure '.config' is present
-    mkdir -p "$HOME/.config"
+    : #No action
 }
 
 ##############################################################################
@@ -40,7 +39,7 @@ pkg.unlink() {
 
 # Uninstall package
 pkg.uninstall() {
-    : #TODO
+    : #No action
 }
 
 ##############################################################################
