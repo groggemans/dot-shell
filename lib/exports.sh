@@ -28,7 +28,9 @@ append_path "$HOME/.bin"                # Users bin folder
 # Ellipsis
 
 if [ -f "$HOME/.ellipsis/init.sh" ]; then
-    source "$HOME/.ellipsis/init.sh"
+    . "$HOME/.ellipsis/init.sh"
+else
+    append_path "$HOME/ellipsis/bin"
 fi
 
 ##############################################################################

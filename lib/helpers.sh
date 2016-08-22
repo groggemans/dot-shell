@@ -8,7 +8,8 @@
 
 # PATH helper, if exists, prepend, no duplication
 prepend_path() {
-    if [[ -d $1 ]] && [[ ! $PATH =~ "(^|:)$1(:|$)" ]]; then
+    duplicates="$(echo "$PATH" | grep -Ec "(^|:)$1(:|$)")"
+    if [ -d "$1" ] && [ "$duplicates" -eq 0 ]; then
         export PATH="$1:$PATH"
     fi
 }
@@ -17,7 +18,8 @@ prepend_path() {
 
 # PATH helper, if exists, append, no duplication
 append_path() {
-    if [[ -d $1 ]] && [[ ! $PATH =~ "(^|:)$1(:|$)" ]]; then
+    duplicates="$(echo "$PATH" | grep -Ec "(^|:)$1(:|$)")"
+    if [ -d "$1" ] && [ "$duplicates" -eq 0 ]; then
         export PATH="$PATH:$1"
     fi
 }
