@@ -81,3 +81,9 @@ if [[ $IS_MAC -eq 1 ]]; then
 fi
 
 ##############################################################################
+# FUN
+
+alias matrix='cmatrix -sb; clr'
+alias starwars='screen -S starwars telnet towel.blinkenlights.nl'
+
+##############################################################################
