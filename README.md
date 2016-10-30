@@ -9,7 +9,7 @@ Feel free to use it as a starting point for your own shell configuration!
 *This package needs other pakcages to be of any use!*
 
 ## Install
-**Requirements:** [Ellipsis][ellipsis]
+**Requirements:** [Ellipsis][ellipsis] `(>=v1.9.0)`
 
 ``` shell
 $ ellipsis install groggemans/dot-shell

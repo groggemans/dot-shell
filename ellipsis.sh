@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 ##############################################################################
 # @file ellipsis.sh
 # @date January, 2016
@@ -7,14 +6,20 @@
 # @license MIT
 ##############################################################################
 
-# Install package
+# Minimal ellipsis version
+ELLIPSIS_VERSION_DEP='1.9.0'
+
+# Package dependencies (informational/not used!)
+ELLIPSIS_PKG_DEPS=''
+
+##############################################################################
+
 pkg.install() {
-    : #No action
+    : # No action
 }
 
 ##############################################################################
 
-# Link package
 pkg.link() {
     # Link profile file
     fs.link_file profile
@@ -26,7 +31,6 @@ pkg.link() {
 
 ##############################################################################
 
-# Unlink package
 pkg.unlink() {
     # Remove link in ~/.config
     rm -f "$ELLIPSIS_HOME/.config/shell"
@@ -37,9 +41,8 @@ pkg.unlink() {
 
 ##############################################################################
 
-# Uninstall package
 pkg.uninstall() {
-    : #No action
+    : # No action
 }
 
 ##############################################################################
