@@ -87,3 +87,11 @@ alias matrix='cmatrix -sb; clr'
 alias starwars='screen -S starwars telnet towel.blinkenlights.nl'
 
 ##############################################################################
+
+# Test if xdg-open is installed
+command -v xdg-open >/dev/null 2>&1
+if [[ "$?" -eq 0 ]]; then
+    alias open='xdg-open'
+fi
+
+##############################################################################
