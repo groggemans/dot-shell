@@ -7,7 +7,7 @@
 ##############################################################################
 
 # Minimal ellipsis version
-ELLIPSIS_VERSION_DEP='1.9.0'
+ELLIPSIS_VERSION_DEP='1.9.4'
 
 # Package dependencies (informational/not used!)
 ELLIPSIS_PKG_DEPS=''
@@ -27,6 +27,18 @@ pkg.link() {
     # Link into ~/.config/shell
     mkdir -p "$ELLIPSIS_HOME/.config"
     fs.link_rfile "$PKG_PATH" "$ELLIPSIS_HOME/.config/shell"
+}
+
+##############################################################################
+
+pkg.pull() {
+    # Use improved update strategy
+    git remote update 2>&1 > /dev/null
+    if git.is_behind; then
+        pkg.unlink
+        git.pull
+        pkg.link
+    fi
 }
 
 ##############################################################################
