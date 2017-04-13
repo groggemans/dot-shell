@@ -31,7 +31,7 @@ alias ....='cd ../../..'
 # ls aliases
 
 # Add color option for Linux
-if [[ $IS_LINUX -eq 1 ]]; then
+if [ "$IS_LINUX" -eq 1 ]; then
     alias ls='ls -GFh --color'
 else
     alias ls='ls -GFh'
@@ -51,29 +51,23 @@ alias lal='la|less'
 # Ansible
 
 # Test if ansible is installed
-command -v ansible >/dev/null 2>&1
-if [[ "$?" -eq 0 ]]; then
-    HAS_ANSIBLE=1
-fi
-
-# Faster ansible ussage
-if [[ $HAS_ANSIBLE -eq 1 ]]; then
+command -v ansible >/dev/null 2>&1 && {
     alias galaxy='ansible-galaxy'
     alias play='ansible-playbook'
     alias playbook='ansible-playbook'
-fi
+}
 
 # Faster source usage
-if [[ -f "$HOME/ansible/hacking/env-setup" ]]; then
+if [ -f "$HOME/ansible/hacking/env-setup" ]; then
     alias src-ansible="source $HOME/ansible/hacking/env-setup"
-elif [[ -f "$HOME/.ansible/hacking/env-setup" ]]; then
+elif [ -f "$HOME/.ansible/hacking/env-setup" ]; then
     alias src-ansible="source $HOME/.ansible/hacking/env-setup"
 fi
 
 ##############################################################################
 # OSX specific aliases
 
-if [[ $IS_MAC -eq 1 ]]; then
+if [ "$IS_MAC" -eq 1 ]; then
     alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES;
                     killall Finder /System/Library/CoreServices/Finder.app'
     alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO;
@@ -89,9 +83,17 @@ alias starwars='screen -S starwars telnet towel.blinkenlights.nl'
 ##############################################################################
 
 # Test if xdg-open is installed
-command -v xdg-open >/dev/null 2>&1
-if [[ "$?" -eq 0 ]]; then
+command -v xdg-open >/dev/null 2>&1 && {
     alias open='xdg-open'
-fi
+}
+
+##############################################################################
+# Vim to NeoVim
+
+command -v nvim >/dev/null 2>&1 && {
+    alias vim='nvim'
+    alias vi='nvim'
+    alias view='nvim -R'
+}
 
 ##############################################################################

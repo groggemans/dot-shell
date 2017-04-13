@@ -14,19 +14,16 @@ if [ "$(uname)" = "Darwin" ]; then
     IS_MAC=1
 fi
 
-command -v brew >/dev/null 2>&1
-if [ "$?" -eq 0 ]; then
+command -v brew >/dev/null 2>&1 && {
     HAS_BREW=1
-fi
+}
 
-command -v apt-get >/dev/null 2>&1
-if [ "$?" -eq 0 ]; then
+command -v apt-get >/dev/null 2>&1 && {
     HAS_APT=1
-fi
+}
 
-command -v yum >/dev/null 2>&1
-if [ "$?" -eq 0 ]; then
+command -v yum >/dev/null 2>&1 && {
     HAS_YUM=1
-fi
+}
 
 ##############################################################################

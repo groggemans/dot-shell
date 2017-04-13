@@ -9,13 +9,13 @@
 
 export CLICOLOR=1
 
-if [[ $IS_MAC -eq 1 ]]; then
+if [ "$IS_MAC" -eq 1 ]; then
     # OSX settings
     export LSCOLORS=Exfxcxdxbxegedabagacad
 fi
 
-if [[ $IS_LINUX -eq 1 ]]; then
-    if [[ -x `which dircolors` ]]; then
+if [ "$IS_LINUX" -eq 1 ]; then
+    if [ -x "$(which dircolors)" ]; then
         # Advanced setup for Linux
         eval "$(dircolors -b "$HOME/.config/shell/lib/ls_colors")"
     else

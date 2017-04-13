@@ -7,16 +7,16 @@
 ##############################################################################
 
 # Check if Tmux is available
-if command -v tmux >/dev/null 2>&1; then
+command -v tmux >/dev/null 2>&1 && {
     # If not running interactively, do nothing
     case $- in
         *i*)
             # Run Tmux if not already running
-            if [[ -z "$TMUX" ]]; then
+            if [ -z "$TMUX" ]; then
                 echo "Press enter to start tmux..."
                 read choice
 
-                if [[ "$choice" =~ [Nn]o? ]]; then
+                if [ "$choice" != 'n' ]; then
                     return
                 else
                     # Use 256 colors by default
@@ -30,6 +30,6 @@ if command -v tmux >/dev/null 2>&1; then
             return;
         ;;
     esac
-fi
+}
 
 ##############################################################################
