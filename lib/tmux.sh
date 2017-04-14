@@ -16,7 +16,7 @@ command -v tmux >/dev/null 2>&1 && {
                 echo "Press enter to start tmux..."
                 read choice
 
-                if [ "$choice" != 'n' ]; then
+                if [ "$choice" = 'n' ]; then
                     return
                 else
                     # Use 256 colors by default
