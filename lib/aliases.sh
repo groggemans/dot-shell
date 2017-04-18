@@ -31,7 +31,7 @@ alias ....='cd ../../..'
 # ls aliases
 
 # Add color option for Linux
-if [ "$IS_LINUX" -eq 1 ]; then
+if [ "${IS_LINUX:-0}" -eq 1 ]; then
     alias ls='ls -GFh --color'
 else
     alias ls='ls -GFh'
@@ -67,7 +67,7 @@ fi
 ##############################################################################
 # OSX specific aliases
 
-if [ "$IS_MAC" -eq 1 ]; then
+if [ "${IS_MAC:-0}" -eq 1 ]; then
     alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES;
                     killall Finder /System/Library/CoreServices/Finder.app'
     alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO;
