@@ -23,6 +23,7 @@ export LANGUAGE="en_US.UTF-8"
 
 append_path "$HOME/bin"                         # Users bin folder
 append_path "$HOME/.bin"                        # Users bin folder
+append_path "$HOME/.local/bin"                  # Users bin folder
 append_path "$HOME/.config/composer/vendor/bin" # Composer bin
 
 ##############################################################################
