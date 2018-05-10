@@ -27,6 +27,11 @@ append_path "$HOME/.local/bin"                  # Users bin folder
 append_path "$HOME/.config/composer/vendor/bin" # Composer bin
 
 ##############################################################################
+# GO
+
+export GOPATH="$HOME/go"
+
+##############################################################################
 # Ellipsis
 
 if [ -f "$HOME/.ellipsis/init.sh" ]; then
