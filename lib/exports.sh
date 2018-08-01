@@ -19,6 +19,13 @@ export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 
 ##############################################################################
+# History
+
+export HISTSIZE=10000
+export HISTCONTROL='ignorespace:erasedups'
+export HISTTIMEFORMAT="%F %T "
+
+##############################################################################
 # PATH
 
 append_path "$HOME/bin"                         # Users bin folder
