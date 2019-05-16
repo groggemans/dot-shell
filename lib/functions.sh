@@ -7,8 +7,12 @@
 ##############################################################################
 
 # Generate password
-gen_pass() {
+create_password() {
     strings /dev/urandom | tr -d $'\n\t' | head -c"${1:-24}";echo
+}
+
+create_password_alphanumeric() {
+    strings /dev/urandom | tr -dc _A-Z-a-z-0-9 | head -c"${1:-24}";echo
 }
 
 ##############################################################################
