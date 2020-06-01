@@ -32,15 +32,11 @@ append_path "$HOME/bin"                         # Users bin folder
 append_path "$HOME/.bin"                        # Users bin folder
 append_path "$HOME/.local/bin"                  # Users bin folder
 append_path "$HOME/.config/composer/vendor/bin" # Composer bin
+append_path "$HOME/ellipsis/bin"                # Ellipsis bin folder
 
 ##############################################################################
 # GO
 
 export GOPATH="$HOME/go"
-
-##############################################################################
-# Ellipsis
-
-append_path "$HOME/ellipsis/bin"
 
 ##############################################################################
