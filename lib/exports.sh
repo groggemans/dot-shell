@@ -41,10 +41,6 @@ export GOPATH="$HOME/go"
 ##############################################################################
 # Ellipsis
 
-if [ -f "$HOME/.ellipsis/init.sh" ]; then
-    . "$HOME/.ellipsis/init.sh"
-else
-    append_path "$HOME/ellipsis/bin"
-fi
+append_path "$HOME/ellipsis/bin"
 
 ##############################################################################

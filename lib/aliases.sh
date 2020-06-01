@@ -53,7 +53,6 @@ alias lal='la|less'
 # Test if ansible is installed
 command -v ansible >/dev/null 2>&1 && {
     alias galaxy='ansible-galaxy'
-    alias play='ansible-playbook'
     alias playbook='ansible-playbook'
 }
 
@@ -78,7 +77,6 @@ fi
 # FUN
 
 alias matrix='cmatrix -sb; clr'
-alias starwars='screen -S starwars telnet towel.blinkenlights.nl'
 
 ##############################################################################
 

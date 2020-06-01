@@ -8,11 +8,11 @@
 
 # Generate password
 create_password() {
-    strings /dev/urandom | tr -d $'\n\t' | head -c"${1:-24}";echo
+    strings /dev/urandom | tr -dc _A-Z-a-z-0-9 | head -c"${1:-64}";echo
 }
 
-create_password_alphanumeric() {
-    strings /dev/urandom | tr -dc _A-Z-a-z-0-9 | head -c"${1:-24}";echo
+create_password_symbols() {
+    strings /dev/urandom | tr -d $'\n\t' | head -c"${1:-64}";echo
 }
 
 ##############################################################################
