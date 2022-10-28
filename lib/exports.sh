@@ -38,6 +38,7 @@ append_path "$HOME/.ellipsis/bin"               # Ellipsis bin folder
 # GO
 
 export GOPATH="$HOME/go"
+append_path "$GOPATH/bin"
 append_path "/usr/local/go/bin"
 
 ##############################################################################
